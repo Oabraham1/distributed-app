@@ -1,3 +1,5 @@
-module github.com/oabraham1/distributed-app.git
+module github.com/oabraham1/distributed-app
 
 go 1.18
+
+require github.com/gorilla/mux v1.8.0
