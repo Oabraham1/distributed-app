@@ -1,6 +1,3 @@
-server:
-	go run cmd/server/main.go
-
 download-protobuf:
 	wget https://github.com/protocolbuffers/protobuf/releases/download/v3.9.0/protoc-3.9.0-osx-x86_64.zip
 
