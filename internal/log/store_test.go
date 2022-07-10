@@ -78,7 +78,7 @@ func TestStoreRead(t *testing.T) {
 	}
 }
 
-func TestStore1ReadAt(t *testing.T) {
+func TestStoreReadAt(t *testing.T) {
 	file, err := ioutil.TempFile("", "store_append_read_test")
 	require.NoError(t, err)
 	defer os.Remove(file.Name())
