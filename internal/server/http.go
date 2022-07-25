@@ -58,7 +58,7 @@ func (server *httpServer) handleProduce(writer http.ResponseWriter, request *htt
 func (server *httpServer) handleConsume(writer http.ResponseWriter, request *http.Request) {
 	var req ConsumeRequest
 	err := json.NewDecoder(request.Body).Decode(&req)
-	if err == nil {
+	if err != nil {
 		http.Error(writer, err.Error(), http.StatusBadRequest)
 		return
 	}
@@ -88,7 +88,7 @@ func NewHTTPServer(address string) *http.Server {
 	r.HandleFunc("/", httpserv.handleProduce).Methods("POST")
 
 	return &http.Server{
-		Addr:           address,
-		Handler:        r,
+		Addr:    address,
+		Handler: r,
 	}
 }
